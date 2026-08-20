@@ -30,22 +30,22 @@ export default function Sidebar() {
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="px-6 pt-8 pb-8">
-        <div className="flex items-center gap-3">
-          <div className="w-11 h-11 bg-primary-500 rounded-[14px] flex items-center justify-center shrink-0">
-            <Heart size={22} className="text-white" fill="white" strokeWidth={0} />
+      <div className="px-6 pt-8 pb-10">
+        <div className="flex items-center gap-3.5">
+          <div className="w-12 h-12 bg-primary-500 rounded-[14px] flex items-center justify-center shrink-0">
+            <Heart size={24} className="text-white" fill="white" strokeWidth={0} />
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <h1 className="text-[17px] font-bold text-text-primary leading-tight tracking-tight">Consultorio</h1>
-              <p className="text-[12px] text-text-muted leading-tight mt-0.5">Centro Medico</p>
+              <h1 className="text-[20px] font-bold text-text-primary leading-tight tracking-tight">Consultorio</h1>
+              <p className="text-[13px] text-text-muted leading-tight mt-0.5">Centro Medico</p>
             </div>
           )}
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 py-1 space-y-2">
+      <nav className="flex-1 px-4 py-1 space-y-2.5">
         {navItems.map(({ path, icon: Icon, label }) => (
           <NavLink
             key={path}
@@ -53,7 +53,7 @@ export default function Sidebar() {
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
               clsx(
-                'flex items-center gap-3.5 px-4 py-4 rounded-[12px] text-[14px] font-medium transition-default group',
+                'flex items-center gap-4 px-4 py-4 rounded-[14px] text-[15px] font-medium transition-default group',
                 isActive
                   ? 'bg-primary-50 text-primary-500'
                   : 'text-text-secondary hover:bg-surface hover:text-text-primary'
@@ -62,7 +62,7 @@ export default function Sidebar() {
           >
             {({ isActive }) => (
               <>
-                <Icon size={20} strokeWidth={isActive ? 2.2 : 1.8} />
+                <Icon size={22} strokeWidth={isActive ? 2.2 : 1.8} />
                 {!collapsed && <span>{label}</span>}
               </>
             )}
@@ -71,18 +71,18 @@ export default function Sidebar() {
       </nav>
 
       {/* User Profile */}
-      <div className="px-4 pb-6">
-        <div className="flex items-center gap-3 px-4 py-3.5 rounded-[12px] hover:bg-surface transition-default">
-          <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center shrink-0">
-            <span className="text-primary-500 font-semibold text-[13px]">
+      <div className="px-4 pb-7">
+        <div className="flex items-center gap-3.5 px-4 py-4 rounded-[14px] hover:bg-surface transition-default">
+          <div className="w-11 h-11 rounded-full bg-primary-50 flex items-center justify-center shrink-0">
+            <span className="text-primary-500 font-semibold text-[14px]">
               {currentUser?.name?.split(' ').map(n => n[0]).join('').slice(0, 2)}
             </span>
           </div>
           {!collapsed && (
             <>
               <div className="flex-1 min-w-0">
-                <p className="text-[13px] font-medium text-text-primary truncate">{currentUser?.name}</p>
-                <p className="text-[11px] text-text-muted truncate">{currentUser?.role === 'admin' ? 'Administradora' : 'Secretaria'}</p>
+                <p className="text-[14px] font-medium text-text-primary truncate">{currentUser?.name}</p>
+                <p className="text-[12px] text-text-muted truncate">{currentUser?.role === 'admin' ? 'Administradora' : 'Secretaria'}</p>
               </div>
               <button className="cursor-pointer">
                 <ChevronDown size={16} className="text-text-muted" />
@@ -124,7 +124,7 @@ export default function Sidebar() {
       <aside
         className={clsx(
           'hidden lg:flex flex-col bg-white border-r border-border-light h-screen sticky top-0 transition-all duration-300 shrink-0',
-          collapsed ? 'w-[76px]' : 'w-[260px]'
+          collapsed ? 'w-[76px]' : 'w-[270px]'
         )}
       >
         <SidebarContent />
