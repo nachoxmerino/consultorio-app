@@ -30,22 +30,22 @@ export default function Sidebar() {
   const SidebarContent = () => (
     <div className="flex flex-col h-full">
       {/* Logo */}
-      <div className="px-5 pt-7 pb-6">
+      <div className="px-6 pt-8 pb-8">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary-500 rounded-[12px] flex items-center justify-center shrink-0">
-            <Heart size={20} className="text-white" fill="white" strokeWidth={0} />
+          <div className="w-11 h-11 bg-primary-500 rounded-[14px] flex items-center justify-center shrink-0">
+            <Heart size={22} className="text-white" fill="white" strokeWidth={0} />
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <h1 className="text-[16px] font-bold text-text-primary leading-tight tracking-tight">Consultorio</h1>
-              <p className="text-[12px] text-text-muted leading-tight">Centro Medico</p>
+              <h1 className="text-[17px] font-bold text-text-primary leading-tight tracking-tight">Consultorio</h1>
+              <p className="text-[12px] text-text-muted leading-tight mt-0.5">Centro Medico</p>
             </div>
           )}
         </div>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-3 py-1 space-y-1">
+      <nav className="flex-1 px-4 py-1 space-y-1.5">
         {navItems.map(({ path, icon: Icon, label }) => (
           <NavLink
             key={path}
@@ -53,7 +53,7 @@ export default function Sidebar() {
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
               clsx(
-                'flex items-center gap-3 px-3.5 py-3 rounded-[12px] text-[14px] font-medium transition-default group',
+                'flex items-center gap-3.5 px-4 py-3.5 rounded-[12px] text-[14px] font-medium transition-default group',
                 isActive
                   ? 'bg-primary-50 text-primary-500'
                   : 'text-text-secondary hover:bg-surface hover:text-text-primary'
@@ -71,10 +71,10 @@ export default function Sidebar() {
       </nav>
 
       {/* User Profile */}
-      <div className="px-3 pb-5">
-        <div className="flex items-center gap-3 px-3.5 py-3 rounded-[12px] hover:bg-surface transition-default">
-          <div className="w-9 h-9 rounded-full bg-primary-50 flex items-center justify-center shrink-0">
-            <span className="text-primary-500 font-semibold text-[12px]">
+      <div className="px-4 pb-6">
+        <div className="flex items-center gap-3 px-4 py-3.5 rounded-[12px] hover:bg-surface transition-default">
+          <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center shrink-0">
+            <span className="text-primary-500 font-semibold text-[13px]">
               {currentUser?.name?.split(' ').map(n => n[0]).join('').slice(0, 2)}
             </span>
           </div>
@@ -85,7 +85,7 @@ export default function Sidebar() {
                 <p className="text-[11px] text-text-muted truncate">{currentUser?.role === 'admin' ? 'Administradora' : 'Secretaria'}</p>
               </div>
               <button className="cursor-pointer">
-                <ChevronDown size={15} className="text-text-muted" />
+                <ChevronDown size={16} className="text-text-muted" />
               </button>
             </>
           )}
@@ -99,7 +99,7 @@ export default function Sidebar() {
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2.5 bg-white rounded-[12px] shadow-card border border-border cursor-pointer"
+        className="lg:hidden fixed top-5 left-5 z-50 p-3 bg-white rounded-[14px] shadow-card border border-border cursor-pointer"
       >
         <Menu size={20} className="text-text-secondary" />
       </button>
@@ -108,10 +108,10 @@ export default function Sidebar() {
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 z-40">
           <div className="absolute inset-0 bg-text-primary/20 backdrop-blur-[2px]" onClick={() => setMobileOpen(false)} />
-          <div className="absolute left-0 top-0 h-full w-[260px] bg-white shadow-[4px_0_24px_rgba(0,0,0,0.08)]">
+          <div className="absolute left-0 top-0 h-full w-[270px] bg-white shadow-[4px_0_24px_rgba(0,0,0,0.08)]">
             <button
               onClick={() => setMobileOpen(false)}
-              className="absolute top-4 right-4 p-1.5 rounded-[8px] hover:bg-surface cursor-pointer"
+              className="absolute top-5 right-5 p-2 rounded-[10px] hover:bg-surface cursor-pointer"
             >
               <X size={18} className="text-text-muted" />
             </button>
@@ -124,7 +124,7 @@ export default function Sidebar() {
       <aside
         className={clsx(
           'hidden lg:flex flex-col bg-white border-r border-border-light h-screen sticky top-0 transition-all duration-300 shrink-0',
-          collapsed ? 'w-[72px]' : 'w-[260px]'
+          collapsed ? 'w-[76px]' : 'w-[260px]'
         )}
       >
         <SidebarContent />
