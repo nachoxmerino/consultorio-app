@@ -24,13 +24,13 @@
   --color-danger-500: #EF5B68;
   --color-danger-600: #dc3f4d;
 
-  --color-surface: #F8FAFC;
+  --color-surface: #F9FAFB;
   --color-card: #FFFFFF;
-  --color-text-primary: #17213D;
-  --color-text-secondary: #7C87A5;
-  --color-text-muted: #a3adc2;
-  --color-border: #e8ecf2;
-  --color-border-light: #f0f2f7;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -47,6 +47,7 @@ body {
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
 }
 
 @layer utilities {
@@ -54,13 +55,13 @@ body {
     scrollbar-width: thin;
   }
   .scrollbar-thin::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
   }
   .scrollbar-thin::-webkit-scrollbar-track {
     background: transparent;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: #d4d9e4;
+    background-color: #D1D5DB;
     border-radius: 10px;
   }
 
@@ -70,21 +71,15 @@ body {
     border: 1px solid var(--color-border);
   }
 
-  .card-sm {
-    background: white;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
-  }
-
   .shadow-card {
-    box-shadow: 0 1px 3px rgba(23, 33, 61, 0.04), 0 0 0 0 transparent;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 
   .shadow-card-hover {
-    box-shadow: 0 4px 20px rgba(23, 33, 61, 0.07);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   }
 
   .transition-default {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.15s ease;
   }
 }

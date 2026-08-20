@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 
 const statusStyles = {
-  pendiente: 'bg-[#fef8ec] text-[#d48806]',
-  confirmado: 'bg-primary-50 text-primary-500',
-  atendido: 'bg-[#ecfaf4] text-success-500',
-  cancelado: 'bg-surface text-text-muted',
+  pendiente: 'bg-warning-50 text-warning-600',
+  confirmado: 'bg-primary-50 text-primary-600',
+  atendido: 'bg-success-50 text-success-600',
+  cancelado: 'bg-gray-100 text-text-muted',
   ausente: 'bg-danger-50 text-danger-500',
-  reprogramado: 'bg-[#f3f0ff] text-[#7c3aed]',
+  reprogramado: 'bg-purple-50 text-purple-600',
 }
 
 const statusLabels = {
@@ -24,7 +24,7 @@ const dotColors = {
   atendido: 'bg-success-500',
   cancelado: 'bg-text-muted',
   ausente: 'bg-danger-500',
-  reprogramado: 'bg-[#7c3aed]',
+  reprogramado: 'bg-purple-500',
 }
 
 export default function Badge({ status, size = 'md', showDot = false, className }) {
@@ -32,10 +32,10 @@ export default function Badge({ status, size = 'md', showDot = false, className 
     <span
       className={clsx(
         'inline-flex items-center gap-1.5 font-medium rounded-full whitespace-nowrap',
-        statusStyles[status] || 'bg-surface text-text-secondary',
-        size === 'sm' && 'px-2 py-0.5 text-[11px]',
-        size === 'md' && 'px-2.5 py-1 text-[11px]',
-        size === 'lg' && 'px-3 py-1 text-xs',
+        statusStyles[status] || 'bg-gray-100 text-text-secondary',
+        size === 'sm' && 'px-2.5 py-1 text-[12px]',
+        size === 'md' && 'px-3 py-1 text-[12px]',
+        size === 'lg' && 'px-3.5 py-1.5 text-[13px]',
         className
       )}
     >
