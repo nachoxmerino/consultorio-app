@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0f2fd;
+  --color-primary-100: #e1e5fb;
+  --color-primary-200: #c8cff8;
+  --color-primary-300: #a3b0f3;
+  --color-primary-400: #7a8fec;
+  --color-primary-500: #4F6FEF;
+  --color-primary-600: #3b5cd4;
+  --color-primary-700: #2e49b0;
+  --color-primary-800: #263d8e;
+  --color-primary-900: #1e306e;
+
+  --color-success-50: #ecfaf4;
+  --color-success-500: #20B486;
+  --color-success-600: #189a72;
+
+  --color-warning-50: #fef8ec;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #d48806;
+
+  --color-danger-50: #fef1f2;
+  --color-danger-500: #EF5B68;
+  --color-danger-600: #dc3f4d;
+
+  --color-surface: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-text-primary: #17213D;
+  --color-text-secondary: #7C87A5;
+  --color-text-muted: #a3adc2;
+  --color-border: #e8ecf2;
+  --color-border-light: #f0f2f7;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #d4d9e4;
+    border-radius: 10px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+  }
+
+  .card-sm {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(23, 33, 61, 0.04), 0 0 0 0 transparent;
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 4px 20px rgba(23, 33, 61, 0.07);
+  }
+
+  .transition-default {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
