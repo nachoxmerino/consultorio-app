@@ -45,7 +45,7 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 py-1 space-y-1.5">
+      <nav className="flex-1 px-4 py-1 space-y-2">
         {navItems.map(({ path, icon: Icon, label }) => (
           <NavLink
             key={path}
@@ -53,7 +53,7 @@ export default function Sidebar() {
             onClick={() => setMobileOpen(false)}
             className={({ isActive }) =>
               clsx(
-                'flex items-center gap-3.5 px-4 py-3.5 rounded-[12px] text-[14px] font-medium transition-default group',
+                'flex items-center gap-3.5 px-4 py-4 rounded-[12px] text-[14px] font-medium transition-default group',
                 isActive
                   ? 'bg-primary-50 text-primary-500'
                   : 'text-text-secondary hover:bg-surface hover:text-text-primary'
